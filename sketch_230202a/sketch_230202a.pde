@@ -6,14 +6,13 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //Global Variables
 String path = new File("").getAbsolutePath(); //Exported Program
-//CAUTION: GitHub must be linked to the C-Drive instead of FS ... This might need a lesson
 String directory = "//FS-052/studuser$/Gr11/n.borja/My Documents/app-engine-review/sketch_230202a"; //Not Exported
-//Reminder: \n is a character escape, so pathway must have forward slashes
-//
+
 Minim minim; //creates an object to access all functions
 AudioPlayer[] songs = new AudioPlayer[16]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
 //
 void setup() {
+  size(750,800);
   //
   minim = new Minim (this); //load from data directory, loadFile should also load from project folder, like loadImage
   //
