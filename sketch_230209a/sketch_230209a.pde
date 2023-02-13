@@ -1,10 +1,8 @@
-float pauseX1, pauseY1, pauseX2, pauseY2, pauseWidth, pauseHeight;
-float pauseScaleWidth, pauseScaleHeight;
 
 void setup() {
   size(700, 400); //width, height
   float pauseStartDrawX = width * 1/2;
-  float pauseStartDrawY = height *4/10;
+  float pauseStartDrawY = height * 1/2;
   pauseScaleWidth = 1.0/25.0;
   pauseScaleHeight = 1.0/3.0;
   pauseWidth = width * pauseScaleWidth;
@@ -14,19 +12,21 @@ void setup() {
   pauseY2 = pauseStartDrawY;
   pauseHeight = height * pauseScaleHeight;
   //
-  float
-  px1 = pauseX1;
-  py1 = pauseY1;
-  px2 = pauseX1;
-  py2 = pausey1 - 3;
-  px3 = pauseX2 + 3;
-  py3 = pauseY2;
+  stopX = pauseStartDrawX - (width * 14/30);
+  stopY = pauseY1 ;
+  stopW = pauseHeight;
+  stopH = pauseHeight;
+  //
+  
 }//End setup
 //
 void draw() {
+  drawSkipBackButton();
+  drawStopButton();
   rect( pauseX1, pauseY1, pauseWidth, pauseHeight );
   rect( pauseX2, pauseY2, pauseWidth, pauseHeight );
-  triangle(px1, py1, px2, py2, px3, py3);
+  //
+  
 }//End draw
 //
 void keyPressed() {}//End keyPressed
