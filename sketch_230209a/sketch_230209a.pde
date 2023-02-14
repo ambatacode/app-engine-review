@@ -17,14 +17,26 @@ void setup() {
   stopW = pauseHeight;
   stopH = pauseHeight;
   //
-  
+  SBBX1 = pauseStartDrawX - (width * 2./25);
+  SBBY1 = pauseStartDrawY;
+  SBBX2 = SBBX1;
+  SBBY2 = pauseStartDrawY - (height * -3./10);
+  SBBX3 = pauseStartDrawX - (width * 6/25);
+  SBBY3 = pauseY1 - (height * -1.6/10);
+  //
+  SW = width * 0.6/20.0;
+  BRX1 = pauseStartDrawX - (width * 6/25);
+  BRY2 = pauseStartDrawY;
+  BRW = SW;
+  BRH = pauseHeight;
+  //
 }//End setup
 //
 void draw() {
   drawSkipBackButton();
   drawStopButton();
-  rect( pauseX1, pauseY1, pauseWidth, pauseHeight );
-  rect( pauseX2, pauseY2, pauseWidth, pauseHeight );
+  rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
+  rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
   //
   
 }//End draw

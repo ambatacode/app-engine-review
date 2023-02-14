@@ -4,7 +4,8 @@ float pauseScaleWidth, pauseScaleHeight;
 float stopX, stopY, stopW, stopH;
 color resetcolourNight=#FFFF4B, black=#000000;//night mode friendly
 color resetcolourDay=#FFFFFF;
-float SBBX1, SBBY1, SBBX2, SBBY2, SBBX3, SBBY3;
+float SBBX1, SBBY1, SBBX2, SBBY2, SBBX3, SBBY3,BRX1, BRY2, BRW, BRH;
+float SW;
 //
 void drawMusicButtons() {
   drawSkipBackButton();
@@ -20,10 +21,11 @@ void drawPausebutton() {
 //
 void drawStopButton() {
   fill( black );
-  rect(stopX, stopY, stopW, stopH);
+  rect(stopX, stopY, stopW, stopH, 41);
   fill( resetcolourDay );
 }//end 
 //
 void drawSkipBackButton(){
-  triangle(SBBX1, SBBY1, SBBX2, SBBY2, SBBX3, SBBY3)
+  triangle(SBBX1, SBBY1, SBBX2, SBBY2, SBBX3, SBBY3);
+  rect(BRX1, BRY2, BRW, BRH, 41);
 }
