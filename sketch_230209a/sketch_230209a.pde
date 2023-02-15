@@ -1,8 +1,11 @@
 
 void setup() {
-  size(700, 400); //width, height
+  strokeWeight(7);
+  strokeJoin(ROUND);
+  stroke(#c7f9cc);
+  size(1000,600); //width, height
   float pauseStartDrawX = width * 1/2;
-  float pauseStartDrawY = height * 1/2;
+  float pauseStartDrawY = height * 2.5/4;
   pauseScaleWidth = 1.0/25.0;
   pauseScaleHeight = 1.0/3.0;
   pauseWidth = width * pauseScaleWidth;
@@ -12,23 +15,24 @@ void setup() {
   pauseY2 = pauseStartDrawY;
   pauseHeight = height * pauseScaleHeight;
   //
-  stopX = pauseStartDrawX - (width * 14/30);
-  stopY = pauseY1 ;
-  stopW = pauseHeight;
-  stopH = pauseHeight;
+  
+  stopX = pauseStartDrawX - (width * 13/30);
+  stopY = pauseY1 - (height * -1.5/30) ;
+  stopW = pauseHeight * 5/7;
+  stopH = pauseHeight * 5/7;
   //
-  SBBX1 = pauseStartDrawX - (width * 2./25);
-  SBBY1 = pauseStartDrawY;
+  SBBX1 = pauseStartDrawX - (width * 3/25);
+  SBBY1 = pauseY1 - (height * -1./30);
   SBBX2 = SBBX1;
-  SBBY2 = pauseStartDrawY - (height * -3./10);
-  SBBX3 = pauseStartDrawX - (width * 6/25);
+  SBBY2 = pauseStartDrawY - (height * -2.9/10);
+  SBBX3 = pauseStartDrawX - (width * 6./25);
   SBBY3 = pauseY1 - (height * -1.6/10);
   //
   SW = width * 0.6/20.0;
   BRX1 = pauseStartDrawX - (width * 6/25);
-  BRY2 = pauseStartDrawY;
+  BRY2 = pauseStartDrawY - (height * 0.45/-8);
   BRW = SW;
-  BRH = pauseHeight;
+  BRH = pauseHeight - (height * 1/8);
   //
 }//End setup
 //
