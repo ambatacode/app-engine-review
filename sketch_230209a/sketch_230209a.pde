@@ -16,15 +16,15 @@ void setup() {
   pauseHeight = height * pauseScaleHeight;
   //
   
-  stopX = pauseStartDrawX - (width * 11/30);
+  stopX = pauseStartDrawX * 11/30;
   stopY = pauseY1 ;
   stopW = pauseHeight ;
   stopH = pauseHeight ;
   //
-  SBBX1 = pauseStartDrawX - (width * 3/25);
+  SBBX1 = pauseStartDrawX * 19/25;
   SBBY1 = pauseStartDrawY;
   SBBX2 = SBBX1;
-  SBBY2 = pauseStartDrawY - (height * -1.1/10);
+  SBBY2 = pauseStartDrawY * 11.4/10;
   SBBX3 = SBBX1 * 20/25;
   SBBY3 = SBBY1 * 4.29/4;
   //
@@ -34,16 +34,29 @@ void setup() {
   BRW = SW;
   BRH = pauseHeight;
   //
-  LBX1 = pauseStartDrawX - (width * -8/30);
+  LBX1 = pauseStartDrawX * 45/30;
   LBY1 = pauseStartDrawY;
   LBW = pauseHeight;
   LBH = pauseHeight;
+  //
+  SFBX1 = pauseStartDrawX * 31/25 ;
+  SFBY1 = pauseStartDrawY ;
+  SFBX2 = SFBX1 ;
+  SFBY2 = pauseStartDrawY * 11.4/10 ;
+  SFBX3 = SFBX1 * 28/25;
+  SFBY3 = SFBY1 * 4.29/4;
+  //
+  FRX1 = SFBX1 * 28.1//25;
+  FRY1 = pauseStartDrawY;
+  FRW = SW;
+  FRH = pauseHeight;
 }//End setup
 //
 void draw() {
   drawSkipBackButton();
   drawStopButton();
   drawLoopButton();
+  drawSkipForwardButton();
   rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
   rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
   //
