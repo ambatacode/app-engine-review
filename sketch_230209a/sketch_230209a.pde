@@ -3,7 +3,7 @@ void setup() {
   strokeWeight(8);
   strokeJoin(ROUND);
   stroke(#a0e8af);
-  size(1000,600); //width, height
+  size(1000,700); //width, height
   float pauseStartDrawX = width * 5/10;
   float pauseStartDrawY = height * 15/20;
   pauseScaleWidth = 1.0/75.0;
@@ -16,7 +16,7 @@ void setup() {
   pauseHeight = height * pauseScaleHeight;
   //
   
-  stopX = pauseStartDrawX * 11/30;
+  stopX = pauseStartDrawX * 10/30;
   stopY = pauseY1 ;
   stopW = pauseHeight ;
   stopH = pauseHeight ;
@@ -29,7 +29,7 @@ void setup() {
   SBBY3 = SBBY1 * 4.29/4;
   //
   SW = width * 0.2/20.0;
-  BRX1 = pauseStartDrawX - (width * 5.3/25);
+  BRX1 = pauseStartDrawX * 14.6/25;
   BRY2 = pauseStartDrawY;
   BRW = SW;
   BRH = pauseHeight;
@@ -46,16 +46,24 @@ void setup() {
   SFBX3 = SFBX1 * 28/25;
   SFBY3 = SFBY1 * 4.29/4;
   //
-  FRX1 = SFBX1 * 28.1//25;
+  FRX1 = SFBX1 * 28.1/25;
   FRY1 = pauseStartDrawY;
   FRW = SW;
   FRH = pauseHeight;
+  //
+  PBX1 = pauseX1;
+  PBY1 = pauseY1;
+  PBX2 = pauseStartDrawX * 5.2/5 ;
+  PBY2 = pauseStartDrawY * 5.35/5 ;
+  PBX3 = pauseX1 ;
+  PBY3 = pauseY1 * 5.7/5;
 }//End setup
 //
 void draw() {
   drawSkipBackButton();
   drawStopButton();
   drawLoopButton();
+  drawPlayButton();
   drawSkipForwardButton();
   rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
   rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);

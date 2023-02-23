@@ -8,9 +8,10 @@ float SBBX1, SBBY1, SBBX2, SBBY2, SBBX3, SBBY3, BRX1, BRY2, BRW, BRH;
 float SW;
 float LBX1, LBY1, LBW, LBH, SW2;
 float SFBX1, SFBY1, SFBX2, SFBY2, SFBX3, SFBY3, FRX1, FRY1, FRW, FRH ;
-
+float PBX1, PBY1, PBX2, PBY2, PBX3, PBY3;
 //
 void drawMusicButtons() {
+  drawPlayButton();
   drawLoopButton();
   drawSkipBackButton();
   drawPausebutton();
@@ -44,4 +45,8 @@ void drawLoopButton() {
 void drawSkipForwardButton() {
   triangle(SFBX1, SFBY1, SFBX2, SFBY2, SFBX3, SFBY3);
   rect(FRX1, FRY1, FRW, FRH, 41);
+}
+//
+void drawPlayButton() {
+triangle(PBX1, PBY1,PBX2, PBY2,PBX3, PBY3);
 }
