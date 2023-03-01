@@ -1,4 +1,5 @@
 //global variables\\
+float appWidth, appHeight;
 float pauseX1, pauseY1, pauseX2, pauseY2, pauseWidth, pauseHeight;
 float pauseScaleWidth, pauseScaleHeight;
 float stopX, stopY, stopW, stopH;

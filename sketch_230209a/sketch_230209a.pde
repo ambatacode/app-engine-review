@@ -1,9 +1,14 @@
 
 void setup() {
+   appWidth = width; //displayWidth
+   appHeight = height; //displayHeight
   strokeWeight(8);
   strokeJoin(ROUND);
   stroke(#a0e8af);
   size(1000,700); //width, height
+  float startingX = appWidth * 1/2;
+  float startingY = appHeight * 1/2;
+  
   float pauseStartDrawX = width * 5/10;
   float pauseStartDrawY = height * 15/20;
   pauseScaleWidth = 1.0/75.0;
