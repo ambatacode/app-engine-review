@@ -11,16 +11,21 @@ void setup() {
   //
   size(750,800);
   //
-  songs[0].loop(0); //Change the index manually
+  songs[currentSong].loop(0); //Change the index manually
 }//End setup
 //
 void draw() {
+  println("current song position;",songs[currentSong].position() );
   
 }//End draw
 //
 void keyPressed() {
-}//End keyPressed
-//
+  keyPressedMusic();
+}
+  //
+  //proto
+  //End keyPressed
+
 void mousePressed() {
 }//End mousePressed
 //
