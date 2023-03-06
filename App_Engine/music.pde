@@ -25,7 +25,7 @@ void drawMusic() {
 }//End drawMusic
 //
 void keyPressedMusic() {
-  if(key == 'm' || key == 'M') {
+    if(key == 'm' || key == 'M') {
     if ( songs[currentSong].isMuted() ) {
     songs[currentSong].unmute();
   } else if( songs[currentSong].position() >= songs[currentSong].length()*4/5) { 
@@ -38,8 +38,34 @@ void keyPressedMusic() {
     
   }//mute
   
-}//end mute button
-  
+ }
+ if (key == 'f' || key == 'F') {
+   songs[currentSong].skip(5000);
+ } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10);
+   //if else () my choice
+ //end
+ if (key == 'r' || key == 'R'){ 
+   //double tap r = reset
+   songs[currentSong].skip(-5000);//miliseconds
+ }
+ //
+ //Single loop
+ if (key == '1'){
+   //finish song then replays
+   delay(songs[currentSong].length() - songs[currentSong].position());
+   //issue delay stops errything. comp doesnt realize song plays
+   songs[currentSong].loop(0);
+   //
+   //loop to inf
+   if (key == '9' && key !='1' ){
+   //finish song then replays for inf
+   delay(songs[currentSong].length() - songs[currentSong].position());
+   //loop inf
+   songs[currentSong].loop(-1);
+   //
+   //stop
+   if (songs[currentSong].isPlaying()) {.pause() .rewind();} else {.rewind()}
+ }
 }//End keyPressedMusic
 //
 void mousePressedMusic() {
