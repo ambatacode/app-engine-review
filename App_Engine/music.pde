@@ -51,10 +51,16 @@ void keyPressedMusic() {
  //
  //Single loop
  if (key == '1'){
+   if(songs[currentSong].isPlaying() ) {
+     songs[currentSong].pause();
+   } else {
+     songs[currentSong].loop(0);
+   }
    //finish song then replays
-   delay(songs[currentSong].length() - songs[currentSong].position());
+   //delay(songs[currentSong].length() - songs[currentSong].position());
    //issue delay stops errything. comp doesnt realize song plays
    songs[currentSong].loop(0);
+ }
    //
    //loop to inf
    if (key == '9' && key !='1' ){
@@ -64,12 +70,31 @@ void keyPressedMusic() {
    songs[currentSong].loop(-1);
    //
    //stop
-   if (songs[currentSong].isPlaying()) {.pause() .rewind();} else {.rewind()}
  }
+ //
+ if (key == 's' || key =='S') {
+   if ( songs[currentSong].isPlaying() ) {
+     songs[currentSong].pause(); 
+     songs[currentSong].rewind(); 
+     } else {
+   songs[currentSong].rewind();
+  }
+ 
+ }
+ if (key == 'p' || key == 'P') {
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+  } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10) {
+    songs[currentSong].rewind();
+  } else {
+    songs[currentSong].play();
+  }
+}//end pause
 }//End keyPressedMusic
 //
 void mousePressedMusic() {
 }//End mousePressedMusic
+
 void concatenationofmusicFiles() {
   pathway = "data/";
   cycles = "Cycles.mp3";
