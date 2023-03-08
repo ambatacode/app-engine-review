@@ -1,4 +1,5 @@
 //global variables
+
 Minim minim; //creates an object to access all functions
 AudioPlayer[] songs = new AudioPlayer[2];
 AudioPlayer[] soundEffects = new AudioPlayer[2];//creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
@@ -24,6 +25,7 @@ void setupMusic() {
 void drawMusic() {
 }//End drawMusic
 //
+//MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---
 void keyPressedMusic() {
     if(key == 'm' || key == 'M') {
     if ( songs[currentSong].isMuted() ) {
@@ -36,9 +38,9 @@ void keyPressedMusic() {
   else{
     songs[currentSong].mute();
     
-  }//mute
+  }//MUTE END---MUTE END---MUTE END---MUTE END---MUTE END---MUTE END---MUTE END---
   
- }
+ }//SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---
  if (key == 'f' || key == 'F') {
    songs[currentSong].skip(5000);
  } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10);
@@ -47,27 +49,41 @@ void keyPressedMusic() {
  if (key == 'r' || key == 'R'){ 
    //double tap r = reset
    songs[currentSong].skip(-5000);//miliseconds
- }
+ }//SKIP END---SKIP END---SKIP END---SKIP END---SKIP END---SKIP END---SKIP END---
  //
  //Single loop
+ /*
+ - ---issues---
+ - the computer wont read the number of loops. it just loops into infinity
+ - 
+ */
  if (key == '1'){
    if(songs[currentSong].isPlaying() ) {
      songs[currentSong].pause();
+     songs[currentSong].loop(0);
+     songs[currentSong].play();
    } else {
      songs[currentSong].loop(0);
    }
    //finish song then replays
    //delay(songs[currentSong].length() - songs[currentSong].position());
    //issue delay stops errything. comp doesnt realize song plays
-   songs[currentSong].loop(0);
+   //songs[currentSong].loop(0);
  }
    //
    //loop to inf
    if (key == '9' && key !='1' ){
+     if ( songs[currentSong].isPlaying() ) {
+       songs[currentSong].pause();
+       songs[currentSong].loop(-1);
+       songs[currentSong].play();
+     } else {
+       songs[currentSong].loop(-1);
+     }
    //finish song then replays for inf
-   delay(songs[currentSong].length() - songs[currentSong].position());
+   //delay(songs[currentSong].length() - songs[currentSong].position());
    //loop inf
-   songs[currentSong].loop(-1);
+   //songs[currentSong].loop(-1);
    //
    //stop
  }
