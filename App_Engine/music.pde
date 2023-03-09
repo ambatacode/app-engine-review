@@ -1,5 +1,5 @@
 //global variables
-
+boolean AutoPlayOn = false
 Minim minim; //creates an object to access all functions
 AudioPlayer[] songs = new AudioPlayer[2];
 AudioPlayer[] soundEffects = new AudioPlayer[2];//creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
@@ -23,6 +23,10 @@ void setupMusic() {
 }
 //
 void drawMusic() {
+  println("current song position;",songs[currentSong].position() )
+  //
+  AutoPlayMusic();
+  //auto play
 }//End drawMusic
 //
 //MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---
@@ -61,9 +65,8 @@ void keyPressedMusic() {
    if(songs[currentSong].isPlaying() ) {
      songs[currentSong].pause();
      songs[currentSong].loop(0);
-     songs[currentSong].play();
    } else {
-     songs[currentSong].loop(0);
+     //songs[currentSong].loop(0);
    }
    //finish song then replays
    //delay(songs[currentSong].length() - songs[currentSong].position());
@@ -78,7 +81,7 @@ void keyPressedMusic() {
        songs[currentSong].loop(-1);
        songs[currentSong].play();
      } else {
-       songs[currentSong].loop(-1);
+       //songs[currentSong].loop(-1);
      }
    //finish song then replays for inf
    //delay(songs[currentSong].length() - songs[currentSong].position());
@@ -106,6 +109,26 @@ void keyPressedMusic() {
     songs[currentSong].play();
   }
 }//end pause
+//auto
+if (key == 'o'|| key == 'O') {
+  if (AutoPlayOn = false) {
+  AutoPlayOn = true;
+} else {
+AutoPlayOn = false}
+}
+//
+if ( key == 'n' || key == 'N') {
+  if ( songs[currentSong].isPlayingd()) {
+    // nothing
+  } else {
+    currentSong++;
+    
+  }
+  currentSong+1;
+}
+//
+if () {}
+
 }//End keyPressedMusic
 //
 void mousePressedMusic() {
@@ -119,4 +142,12 @@ void concatenationofmusicFiles() {
   string = "FreeWare Music_SoundEffect_The_Simplest_Sting.mp3";
 }
 //
+void AutoPlayMusic() {
+  //
+  if (AutoPlayOn) {
+    if() {} else if () {} else {}
+    .is playing, when false rewind, currentSong+1, .play()
+  }
+  
+}
 //End Music SubProgram
