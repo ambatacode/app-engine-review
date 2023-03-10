@@ -1,5 +1,5 @@
 //global variables
-boolean AutoPlayOn = false
+boolean AutoPlayOn = false;
 Minim minim; //creates an object to access all functions
 AudioPlayer[] songs = new AudioPlayer[2];
 AudioPlayer[] soundEffects = new AudioPlayer[2];//creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
@@ -23,7 +23,7 @@ void setupMusic() {
 }
 //
 void drawMusic() {
-  println("current song position;",songs[currentSong].position() )
+  println("current song position;",songs[currentSong].position() );
   //
   AutoPlayMusic();
   //auto play
@@ -114,23 +114,30 @@ if (key == 'o'|| key == 'O') {
   if (AutoPlayOn = false) {
   AutoPlayOn = true;
 } else {
-AutoPlayOn = false}
+AutoPlayOn = false;
+}
 }
 //
-if ( key == 'n' || key == 'N') {
-  if ( songs[currentSong].isPlayingd()) {
-    // nothing
-  } else {
-    currentSong++;
-    
+ if ( key == 'n' || key =='N' ) {
+    if ( songs[currentSong].isPlaying() ) {
+      //Empty IF
+      //If you code a next button to be active when a song is playing ...
+      //Must include .pause()
+      //If the current song is playing, then pressing the next button
+      //play the next song
+      //Must include .play()
+    } else if ( currentSong == songs.length - 1 ) { //ERROR Catch: ArrayOutOfBounds
+      currentSong = songs.length - songs.length; //Intention is Zero
+      songs[currentSong].rewind();
+      songs[currentSong].play();//Intention is Zero, beginning of play list
+    } else {
+      currentSong++;
+       songs[currentSong].rewind();
+      songs[currentSong].play();
+    }
   }
-  currentSong+1;
-}
-//
-if () {}
-
 }//End keyPressedMusic
-//
+
 void mousePressedMusic() {
 }//End mousePressedMusic
 
@@ -145,8 +152,9 @@ void concatenationofmusicFiles() {
 void AutoPlayMusic() {
   //
   if (AutoPlayOn) {
-    if() {} else if () {} else {}
-    .is playing, when false rewind, currentSong+1, .play()
+    //if() {} else if () {} else {}
+    //songs[currentSong].is playing, when false rewind, currentSong+1;
+    //songs[currentSong].play();
   }
   
 }
