@@ -29,26 +29,16 @@ void drawMusic() {
   //auto play
 }//End drawMusic
 //
-//MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---MUTE BUTTON---
 void keyPressedMusic() {
     if(key == 'm' || key == 'M') {
-    if ( songs[currentSong].isMuted() ) {
-    songs[currentSong].unmute();
-  } else if( songs[currentSong].position() >= songs[currentSong].length()*4/5) { 
-    //skip to next song
-    //songs[currentSong].();
-  }
-  
-  else{
-    songs[currentSong].mute();
-    
-  }//MUTE END---MUTE END---MUTE END---MUTE END---MUTE END---MUTE END---MUTE END---
-  
- }//SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---SKIP---
+      mute();
+ }
  if (key == 'f' || key == 'F') {
    songs[currentSong].skip(5000);
  } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10);
-   //if else () my choice
+   currentSong++;
+   songs[currentSong].rewind();
+   songs[currentSong].play();
  //end
  if (key == 'r' || key == 'R'){ 
    //double tap r = reset
@@ -92,22 +82,10 @@ void keyPressedMusic() {
  }
  //
  if (key == 's' || key =='S') {
-   if ( songs[currentSong].isPlaying() ) {
-     songs[currentSong].pause(); 
-     songs[currentSong].rewind(); 
-     } else {
-   songs[currentSong].rewind();
-  }
- 
+   stopbutton();
  }
  if (key == 'p' || key == 'P') {
-  if ( songs[currentSong].isPlaying() ) {
-    songs[currentSong].pause();
-  } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10) {
-    songs[currentSong].rewind();
-  } else {
-    songs[currentSong].play();
-  }
+   play();  
 }//end pause
 //auto
 if (key == 'o'|| key == 'O') {
@@ -121,11 +99,10 @@ AutoPlayOn = false;
  if ( key == 'n' || key =='N' ) {
     if ( songs[currentSong].isPlaying() ) {
       //Empty IF
-      //If you code a next button to be active when a song is playing ...
-      //Must include .pause()
-      //If the current song is playing, then pressing the next button
-      //play the next song
-      //Must include .play()
+      songs[currentSong].pause();
+      currentSong++;
+      songs[currentSong].rewind();
+      songs[currentSong].play();
     } else if ( currentSong == songs.length - 1 ) { //ERROR Catch: ArrayOutOfBounds
       currentSong = songs.length - songs.length; //Intention is Zero
       songs[currentSong].rewind();
@@ -157,5 +134,36 @@ void AutoPlayMusic() {
     //songs[currentSong].play();
   }
   
+}
+void mute() {
+  if ( songs[currentSong].isMuted() ) {
+    songs[currentSong].unmute();
+  } else if( songs[currentSong].position() >= songs[currentSong].length()*4/5) { 
+    //skip to next song
+    //songs[currentSong].();
+  }
+  
+  else{
+    songs[currentSong].mute();
+    
+  }
+  
+}
+void stopbutton() {
+  if ( songs[currentSong].isPlaying() ) {
+     songs[currentSong].pause(); 
+     songs[currentSong].rewind(); 
+     } else {
+   songs[currentSong].rewind();
+  }
+}
+void play() {
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+  } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10) {
+    songs[currentSong].rewind();
+  } else {
+    songs[currentSong].play();
+  }
 }
 //End Music SubProgram
