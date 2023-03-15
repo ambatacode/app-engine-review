@@ -62,14 +62,22 @@ void setup() {
   PBY2 = pauseStartDrawY * 5.35/5 ;
   PBX3 = pauseX1 ;
   PBY3 = pauseY1 * 5.7/5;
+  
+   SFX = pauseStartDrawX * 45/30;
+   SFY = pauseStartDrawY * 6/10;
+   SFL = pauseHeight;
+   SFH = pauseHeight;
+   
+   SFTX1 = pauseStartDrawX * 48.3/30;
+   SFTY1 = pauseStartDrawY * 6/10;
+   SFTX2 = SFTX1 * 28.9/30;
+   SFTY2 = SFTX1 * 3.7/10;
+   SFTX3 = SFTX2;
+   SFTY3 = SFTY1 * 10.7/10;
 }//End setup
 //
 void draw() {
-  drawSkipBackButton();
-  drawStopButton();
-  drawLoopButton();
-  drawPlayButton();
-  drawSkipForwardButton();
+  drawMusicButtons();
   rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
   rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
   //
