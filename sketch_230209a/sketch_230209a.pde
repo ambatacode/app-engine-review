@@ -74,6 +74,19 @@ void setup() {
    SFTY2 = SFTX1 * 3.7/10;
    SFTX3 = SFTX2;
    SFTY3 = SFTY1 * 10.7/10;
+   
+   SBX = pauseStartDrawX * 10/30;
+   SBY = pauseStartDrawY * 6/10;
+   SBL = pauseHeight;
+   SBH = pauseHeight;
+   
+   SBTX1 = pauseStartDrawX * 11/30;
+   SBTY1 = pauseStartDrawY * 6/10;
+   SBTX2 = SBTX1 * 34.8/30;
+   SBTY2 = SBTX1 * 18.6/10;
+   SBTX3 = SBTX2;
+   SBTY3 = SBTY1 * 9.5/10;
+   
 }//End setup
 //
 void draw() {

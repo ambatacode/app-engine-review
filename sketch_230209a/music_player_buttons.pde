@@ -12,6 +12,9 @@ float SFBX1, SFBY1, SFBX2, SFBY2, SFBX3, SFBY3, FRX1, FRY1, FRW, FRH ;
 float PBX1, PBY1, PBX2, PBY2, PBX3, PBY3;
 float SFX, SFY, SFL, SFH;
 float SFTX1, SFTY1, SFTX2, SFTY2, SFTX3, SFTY3;
+float SBTX1, SBTY1, SBTX2, SBTY2, SBTX3, SBTY3;
+float SBX, SBY, SBL, SBH;
+float MX, MY, MH, ML;
 //
 void drawMusicButtons() {
   drawPlayButton();
@@ -21,6 +24,8 @@ void drawMusicButtons() {
   drawStopButton();
   drawSkipForwardButton();
   drawskipF();
+  drawskipB();
+  drawMute();
 }
 
 //
@@ -60,4 +65,16 @@ void drawskipF() {
   ellipse(SFX, SFY, SFL, SFH);
   ellipseMode(CENTER);
   triangle(SFTX1, SFTY1, SFTX2, SFTY2, SFTX3, SFTY3);
+}
+
+void drawskipB() {
+  ellipseMode(CORNER);
+  ellipse(SBX, SBY, SBL, SBH);
+  ellipseMode(CENTER);
+  triangle(SBTX1, SBTY1, SBTX2, SBTY2, SBTX3, SBTY3);
+}
+
+void drawMute() {
+  rect(MX, MY, MH, ML);
+  triangle(SBTX1, SBTY1, SBTX2, SBTY2, SBTX3, SBTY3);
 }
