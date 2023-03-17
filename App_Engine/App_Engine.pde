@@ -11,7 +11,7 @@ void setup() {
   //
   size(750,800);
   //
-  songs[currentSong].loop(0); //Change the index manually
+  songs[currentSong].play(); //Change the index manually
 }//End setup
 //
 void draw() {

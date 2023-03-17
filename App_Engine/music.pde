@@ -1,4 +1,5 @@
 //global variables
+boolean wentback = false;
 boolean AutoPlayOn = false;
 Minim minim; //creates an object to access all functions
 AudioPlayer[] songs = new AudioPlayer[2];
@@ -34,11 +35,14 @@ void keyPressedMusic() {
       mute();
  }
  if (key == 'f' || key == 'F') {
+   if (songs[currentSong].isPlaying()){
    songs[currentSong].skip(5000);
- } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10);
+ } else {
    currentSong++;
    songs[currentSong].rewind();
    songs[currentSong].play();
+ }
+ }
  //end
  if (key == 'r' || key == 'R'){ 
    //double tap r = reset
@@ -98,23 +102,30 @@ AutoPlayOn = false;
 //
  if ( key == 'n' || key =='N' ) {
     if ( songs[currentSong].isPlaying() ) {
-      //Empty IF
-      songs[currentSong].pause();
-      currentSong++;
-      songs[currentSong].rewind();
-      songs[currentSong].play();
-    } else if ( currentSong == songs.length - 1 ) { //ERROR Catch: ArrayOutOfBounds
-      currentSong = songs.length - songs.length; //Intention is Zero
-      songs[currentSong].rewind();
-      songs[currentSong].play();//Intention is Zero, beginning of play list
-    } else {
-      currentSong++;
-       songs[currentSong].rewind();
-      songs[currentSong].play();
+      if ( currentSong == songs.length - 1 ){
+        songs[currentSong].mute();
+        currentSong = songs.length - songs.length;
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();
+        wentback = true;
+      } else {
+        wentback = false;
+      }
+      if (wentback == false) {
+         songs[currentSong].mute();
+        currentSong++;
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();
+     //Empty IF
     }
   }
+  if() {}
 }//End keyPressedMusic
-
+}
 void mousePressedMusic() {
 }//End mousePressedMusic
 
