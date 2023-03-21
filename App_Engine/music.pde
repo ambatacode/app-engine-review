@@ -1,6 +1,6 @@
 //global variables
-boolean wentback = false;
 boolean AutoPlayOn = false;
+boolean RW = false;
 Minim minim; //creates an object to access all functions
 AudioPlayer[] songs = new AudioPlayer[2];
 AudioPlayer[] soundEffects = new AudioPlayer[2];//creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
@@ -93,12 +93,34 @@ void keyPressedMusic() {
 }//end pause
 //auto
 if (key == 'o'|| key == 'O') {
-  if (AutoPlayOn = false) {
+  if (AutoPlayOn == false) {
   AutoPlayOn = true;
 } else {
 AutoPlayOn = false;
 }
 }
+  if (key == 'B' || key == 'b') {
+    if(songs[currentSong].isPlaying()) {
+      if(currentSong <= songs.length - songs.length) {
+        songs[currentSong].mute();
+        currentSong = songs.length - 1;
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();
+        RW = true;
+    } else {
+      RW = false;
+    } if (RW == false){
+      songs[currentSong].mute();
+        currentSong--;
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();
+    }
+  }
+  }
 //
  if ( key == 'n' || key =='N' ) {
     if ( songs[currentSong].isPlaying() ) {
@@ -109,11 +131,11 @@ AutoPlayOn = false;
         songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
-        wentback = true;
+        RW = true;
       } else {
-        wentback = false;
+        RW = false;
       }
-      if (wentback == false) {
+      if (RW == false) {
          songs[currentSong].mute();
         currentSong++;
         songs[currentSong].unmute();
@@ -123,8 +145,9 @@ AutoPlayOn = false;
      //Empty IF
     }
   }
-  if() {}
-}//End keyPressedMusic
+}
+
+//End keyPressedMusic
 }
 void mousePressedMusic() {
 }//End mousePressedMusic
@@ -136,16 +159,13 @@ void concatenationofmusicFiles() {
   springatticdoor = "FreeWare Music_SoundEffect_Spring_Attic_Door.mp3";
   string = "FreeWare Music_SoundEffect_The_Simplest_Sting.mp3";
 }
+
 //
 void AutoPlayMusic() {
   //
-  if (AutoPlayOn) {
-    //if() {} else if () {} else {}
-    //songs[currentSong].is playing, when false rewind, currentSong+1;
-    //songs[currentSong].play();
-  }
   
-}
+  }
+
 void mute() {
   if ( songs[currentSong].isMuted() ) {
     songs[currentSong].unmute();

@@ -94,11 +94,20 @@ void draw() {
   rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
   rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
   //
-  
 }//End draw
 //
 void keyPressed() {}//End keyPressed
 //
-void mousePressed() {}//End mousePressed
+void mousePressed() {
+  if (mouseX>=pauseX1 && mouseX<=pauseX1+pauseWidth && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight ) 
+{
+  println("pause n play");
+}else
+{
+  println("");
+}
+rect(pauseX1,pauseY1,pauseWidth,pauseHeight);
+}//End mousePressed
+
 //
 //End MAIN Program (Driver)
