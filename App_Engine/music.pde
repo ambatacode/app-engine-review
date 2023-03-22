@@ -1,4 +1,5 @@
 //global variables
+boolean PSS = false;
 boolean AutoPlayOn = false;
 boolean RW = false;
 Minim minim; //creates an object to access all functions
@@ -147,7 +148,19 @@ AutoPlayOn = false;
   }
 }
 
+if (AutoPlayOn ==  true) {
+  if (songs[currentSong].isPlaying()) {
+    if ( currentSong == songs.length - 1 ){
+        songs[currentSong].mute();
+        currentSong = songs.length - songs.length;
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();    
+  }
+}
 //End keyPressedMusic
+}
 }
 void mousePressedMusic() {
 }//End mousePressedMusic
@@ -183,18 +196,28 @@ void mute() {
 void stopbutton() {
   if ( songs[currentSong].isPlaying() ) {
      songs[currentSong].pause(); 
-     songs[currentSong].rewind(); 
+     songs[currentSong].rewind();
+     PSS = true;
      } else {
    songs[currentSong].rewind();
+   PSS = false;
   }
 }
 void play() {
   if ( songs[currentSong].isPlaying() ) {
+    if (AutoPlayOn == true){
+      putoPlayOn = false;
+      PSS = true;
+    }
     songs[currentSong].pause();
   } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10) {
     songs[currentSong].rewind();
   } else {
     songs[currentSong].play();
+    if ( PSS == true ){
+      autoPlayOn = true;
+      PSS = false;
+    }
   }
 }
 //End Music SubProgram
