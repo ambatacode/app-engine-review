@@ -19,6 +19,8 @@ void setup() {
   pauseX2 = pauseStartDrawX + pauseWidth*1/2;
   pauseY2 = pauseStartDrawY;
   pauseHeight = height * pauseScaleHeight;
+  float buttonReferentMeasure = width*1/9;
+  float buttonSide = buttonReferentMeasure;
   //
   
   stopX = pauseStartDrawX * 10/30;
@@ -87,18 +89,16 @@ void setup() {
    SBTX3 = SBTX2;
    SBTY3 = SBTY1 * 9.5/10;
    
+   BOXW = pauseHeight * 1.1/2;
+   newW = buttonReferentMeasure;
+   skipwidth = pauseHeight * 3.4/3;
 }//End setup
 //
 void draw() {
   drawMusicButtons();
   rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
   rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
-  //
-}//End draw
-//
-void keyPressed() {}//End keyPressed
-//
-void mousePressed() {
+  //play hover
   if (mouseX>=pauseX1 && mouseX<=pauseX1+pauseWidth && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight ) 
 {
   println("pause n play");
@@ -106,7 +106,32 @@ void mousePressed() {
 {
   println("");
 }
-rect(pauseX1,pauseY1,pauseWidth,pauseHeight);
+rect(pauseX1,pauseY1,BOXW,pauseHeight);
+  //
+  if (mouseX>=BRX1 && mouseX<=BRX1+skipwidth && mouseY>=BRY2 && mouseY<=BRY2+pauseHeight )
+{
+  println("omygyat");
+}
+else
+{
+  println("");
+} 
+rect(BRX1, BRY2, skipwidth, pauseHeight );
+
+if (mouseX>=FRX1 && mouseX<=FRX1+skipwidth && mouseY>=FRY1 && mouseY<=FRY1+pauseHeight )
+{
+} 
+else 
+{
+}
+
+}//End draw
+//
+void keyPressed() {}//End keyPressed
+//
+void mousePressed() {
+  //play/pause
+  
 }//End mousePressed
 
 //
