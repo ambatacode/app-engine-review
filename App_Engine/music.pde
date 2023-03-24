@@ -148,19 +148,11 @@ AutoPlayOn = false;
   }
 }
 
-if (AutoPlayOn ==  true) {
-  if (songs[currentSong].isPlaying()) {
-    if ( currentSong == songs.length - 1 ){
-        songs[currentSong].mute();
-        currentSong = songs.length - songs.length;
-        songs[currentSong].unmute();
-        songs[currentSong].rewind();
-        songs[currentSong].pause();
-        songs[currentSong].play();    
-  }
+if (AutoPlayOn) {
+  if (autoPlayOn == false)
 }
 //End keyPressedMusic
-}
+
 }
 void mousePressedMusic() {
 }//End mousePressedMusic
@@ -220,4 +212,34 @@ void play() {
     }
   }
 }
+// auto
+void autoPlayMusic() { //auto-Play button
+  if ( autoPlayOn ) {
+    if ( autoPlayOn == true ) {
+    } if ( songs[currentSong].isPlaying() ) {
+    } else {
+      if ( currentSong == songs.length - 1 ) { //ERROR catch:
+        songs[currentSong].mute();
+        currentSong = songs.length - songs.length; // intention is zero
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();
+        wentBack = true;
+        // if at the end of playlist this sets it to zero
+      } else {
+        wentBack = false;
+      } 
+      if ( wentBack == false ) {
+        songs[currentSong].mute();
+        currentSong++;
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();
+      }
+    }
+  }//end autoPlayOn
+}//end autoPlayMusic
+
 //End Music SubProgram
