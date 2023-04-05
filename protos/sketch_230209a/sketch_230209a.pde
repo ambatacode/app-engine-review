@@ -102,45 +102,65 @@ void draw() {
   if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight ) 
 {
   println("pause n play");
+  hovered2 = true;
 }else
 { 
-
+hovered2 = false;
 }
-rect(pauseX1,pauseY1,BOXW,pauseHeight);
+
   //
   if (mouseX>=BRX1 && mouseX<=BRX1+skipwidth && mouseY>=BRY2 && mouseY<=BRY2+pauseHeight )
 {
   println("omygyat");
+  hovered3 = true;
 }
 else
 {
+  hovered3 = false;
 
 } 
-rect(BRX1, BRY2, skipwidth, pauseHeight );
+
 //
 if (mouseX>=SFBX1 && mouseX<=SFBX1+skipwidth && mouseY>=FRY1 && mouseY<=FRY1+pauseHeight )
 {
   println("za za");
+  hovered4 = true;
 } 
 else 
 {
-
+hovered4 = false;
 }
-rect(SFBX1, FRY1, skipwidth, pauseHeight);
+
 //
 if (mouseX>=LBX1 && mouseX<=LBX1+LBW && mouseY>=LBY1 && mouseY<= LBY1+LBH){
+ println("works");
+ hovered5 = true;
+} else {
+  hovered5 = false;
+}
+
+
+if (mouseX>=stopX && mouseX<=stopX+stopW && mouseY>=stopY && mouseY<= stopY+stopH){
+ println("worksx2");
+ hovered = true;
+} else {
+  hovered = false;
+}
+
+
+if (mouseX>=SFX && mouseX<=SFX+SFL && mouseY>=SFY && mouseY<= SFY+SFH){
+ println("works222");
+} else {
+  
+}
+
+
+if (mouseX>=SBX && mouseX<=SBX+SBL && mouseY>=SBY && mouseY<= SBY+SBH){
  println("works");
 } else {
   
 }
-rect(LBX1, LBY1, LBW, LBH);
 
-if (mouseX>=stopX && mouseX<=stopX+stopW && mouseY>=stopY && mouseY<= stopY+stopH){
- println("worksx2");
-} else {
-  
-}
-rect(stopX, stopY, stopW, stopH);
 }//End draw
 //
 void keyPressed() {}//End keyPressed
