@@ -139,15 +139,6 @@ if (mouseX>=LBX1 && mouseX<=LBX1+LBW && mouseY>=LBY1 && mouseY<= LBY1+LBH){
   hovered5 = false;
 }
 
-
-if (mouseX>=stopX && mouseX<=stopX+stopW && mouseY>=stopY && mouseY<= stopY+stopH){
- println("worksx2");
- hovered = true;
-} else {
-  hovered = false;
-}
-
-
 if (mouseX>=SFX && mouseX<=SFX+SFL && mouseY>=SFY && mouseY<= SFY+SFH){
  println("works222");
 } else {
@@ -163,7 +154,8 @@ if (mouseX>=SBX && mouseX<=SBX+SBL && mouseY>=SBY && mouseY<= SBY+SBH){
 
 }//End draw
 //
-void keyPressed() {}//End keyPressed
+void keyPressed() {
+}//End keyPressed
 //
 void mousePressed() {
   //play/pause

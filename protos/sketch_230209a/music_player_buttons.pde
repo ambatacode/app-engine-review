@@ -32,12 +32,12 @@ void drawMusicButtons() {
 
 //
 void drawPausebutton() {
-  if (hovered2 == false) {
-  fill( #57CC99 );
+  if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight && mousePressed == true) {
+  fill( #FF9BF9 );
   rect( pauseX1, pauseY1, pauseWidth, pauseHeight );
   rect( pauseX2, pauseY2, pauseWidth, pauseHeight );
   noFill();
-} else if (hovered2 == true) {
+} else if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight) {
 fill( #00FFF0 );
   rect( pauseX1, pauseY1, pauseWidth, pauseHeight );
   rect( pauseX2, pauseY2, pauseWidth, pauseHeight );
@@ -51,11 +51,11 @@ fill( #00FFF0 );
 }
 //
 void drawStopButton() {
-if (hovered == false) {
-    fill( #57CC99 );
+if (mouseX>=stopX && mouseX<=stopX+stopW && mouseY>=stopY && mouseY<= stopY+stopH && mousePressed == true ) {
+    fill( #FF9BF9 );
   rect(stopX, stopY, stopW, stopH,15);
   noFill();
-} else if (hovered == true) {
+} else if (mouseX>=stopX && mouseX<=stopX+stopW && mouseY>=stopY && mouseY<= stopY+stopH) {
   fill( #00FFF0 );
   rect(stopX, stopY, stopW, stopH,15);
   noFill();
@@ -64,6 +64,7 @@ if (hovered == false) {
   rect(stopX, stopY, stopW, stopH,15);
   noFill();
 }
+
 }//end 
 //
 void drawSkipBackButton(){
