@@ -9,25 +9,28 @@ void setup() {
   //
   setupMusic();
   //
-  size(750,800);
-  //
-  songs[currentSong].play(); //Change the index manually
+  size(1000,700);
+  // //Change the index manually
 }//End setup
 //
 void draw() {
   drawMusic();
+  drawMusicButtons();
+  setup2();
   
   
 }//End draw
 //
 void keyPressed() {
   keyPressedMusic();
+  mousePressedMusic();
 }
   //
   //proto
   //End keyPressed
 
 void mousePressed() {
+  mousePressedMusic();
 }//End mousePressed
 //
 //End MAIN Program (Driver)

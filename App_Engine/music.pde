@@ -149,12 +149,16 @@ AutoPlayOn = false;
 }
 
 if (AutoPlayOn) {
-  if (autoPlayOn == false)
+  if (AutoPlayOn == false);
 }
 //End keyPressedMusic
 
 }
 void mousePressedMusic() {
+  if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight) {
+    println("zzazaz");
+    play();
+  }
 }//End mousePressedMusic
 
 void concatenationofmusicFiles() {
@@ -198,7 +202,7 @@ void stopbutton() {
 void play() {
   if ( songs[currentSong].isPlaying() ) {
     if (AutoPlayOn == true){
-      putoPlayOn = false;
+      AutoPlayOn = false;
       PSS = true;
     }
     songs[currentSong].pause();
@@ -207,15 +211,15 @@ void play() {
   } else {
     songs[currentSong].play();
     if ( PSS == true ){
-      autoPlayOn = true;
+      AutoPlayOn = true;
       PSS = false;
     }
   }
 }
 // auto
 void autoPlayMusic() { //auto-Play button
-  if ( autoPlayOn ) {
-    if ( autoPlayOn == true ) {
+  if ( AutoPlayOn ) {
+    if ( AutoPlayOn == true ) {
     } if ( songs[currentSong].isPlaying() ) {
     } else {
       if ( currentSong == songs.length - 1 ) { //ERROR catch:
@@ -225,12 +229,12 @@ void autoPlayMusic() { //auto-Play button
         songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
-        wentBack = true;
+        RW = true;
         // if at the end of playlist this sets it to zero
       } else {
-        wentBack = false;
+        RW = false;
       } 
-      if ( wentBack == false ) {
+      if ( RW == false ) {
         songs[currentSong].mute();
         currentSong++;
         songs[currentSong].unmute();
