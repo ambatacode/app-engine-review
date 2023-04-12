@@ -16,18 +16,18 @@ void drawMusicButtons() {
 void drawPausebutton() {
   if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight && mousePressed == true) {
   fill( #FF9BF9 );
-  rect( pauseX1, pauseY1, pauseWidth, pauseHeight );
-  rect( pauseX2, pauseY2, pauseWidth, pauseHeight );
+  rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
+  rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
   noFill();
 } else if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight) {
 fill( #00FFF0 );
-  rect( pauseX1, pauseY1, pauseWidth, pauseHeight );
-  rect( pauseX2, pauseY2, pauseWidth, pauseHeight );
+  rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
+  rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
   noFill();
 } else {
   fill( #57CC99 );
-  rect( pauseX1, pauseY1, pauseWidth, pauseHeight );
-  rect( pauseX2, pauseY2, pauseWidth, pauseHeight );
+  rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
+  rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
   noFill();
 }
 }

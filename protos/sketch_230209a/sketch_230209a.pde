@@ -6,8 +6,6 @@ void setup() {
 //
 void draw() {
   drawMusicButtons();
-  rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
-  rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
   //play hover
   //
 
