@@ -10,6 +10,7 @@ void setup() {
   setupMusic();
   //
   size(1000,700);
+  background(#003E1D);
   // //Change the index manually
 }//End setup
 //

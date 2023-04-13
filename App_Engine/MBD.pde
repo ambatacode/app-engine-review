@@ -1,6 +1,5 @@
 
 void drawMusicButtons() {
-  drawPlayButton();
   drawLoopButton();
   drawSkipBackButton();
   drawPausebutton();
@@ -13,11 +12,15 @@ void drawMusicButtons() {
 
 //
 void drawPausebutton() {
-  if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight && mousePressed == true) {
+  if (songs[currentSong].isPlaying()) {
+      if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight && mousePressed == true) {
   fill( #FF9BF9 );
-  rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
-  rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
+  triangle(PBX1, PBY1,PBX2, PBY2,PBX3, PBY3);
+  stroke(#003E1D);
+  fill(#003E1D);
+  rect( PBX1, PBY1, BOXW, pauseHeight);
   noFill();
+  noStroke();
 } else if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight) {
 fill( #00FFF0 );
   rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
@@ -29,6 +32,31 @@ fill( #00FFF0 );
   rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
   noFill();
 }
+  } else {
+      if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight && mousePressed == true) {
+  fill( #FF9BF9 );
+  rect( pauseX1, pauseY1, pauseWidth, pauseHeight, 41);
+  rect( pauseX2, pauseY2, pauseWidth, pauseHeight, 41);
+  stroke(#003E1D);
+  noFill();
+  fill(#003E1D);
+  strokeWeight(10);
+  rect( PBX1, PBY1, BOXW, pauseHeight);
+  noFill();
+    noStroke();
+    strokeWeight(8);
+  
+} else if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight) {
+fill( #00FFF0 );
+  triangle(PBX1, PBY1,PBX2, PBY2,PBX3, PBY3);
+  noFill();
+} else {
+  fill( #57CC99 );
+  triangle(PBX1, PBY1,PBX2, PBY2,PBX3, PBY3);
+  noFill();
+}
+    
+  }
 }
 //
 void drawStopButton() {
@@ -108,11 +136,6 @@ void drawSkipForwardButton() {
   }
 }
 //
-void drawPlayButton() {
-  fill( #57CC99 );
-triangle(PBX1, PBY1,PBX2, PBY2,PBX3, PBY3);
-noFill();
-}
 
 void drawskipF() {
   fill( #57CC99 );

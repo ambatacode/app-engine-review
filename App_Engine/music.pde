@@ -156,7 +156,6 @@ if (AutoPlayOn) {
 }
 void mousePressedMusic() {
   if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight) {
-    println("zzazaz");
     play();
   }
 }//End mousePressedMusic
