@@ -5,12 +5,14 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //Global Variables
+color night = #FF9F00;
+
 void setup() {
   //
   setupMusic();
   //
   size(1000,700);
-  background(#003E1D);
+  background(night);
   // //Change the index manually
 }//End setup
 //

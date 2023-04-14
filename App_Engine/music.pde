@@ -1,4 +1,5 @@
-//global variables
+//global variables\
+ boolean click = false;
 boolean PSS = false;
 boolean AutoPlayOn = false;
 boolean RW = false;
@@ -157,6 +158,9 @@ if (AutoPlayOn) {
 void mousePressedMusic() {
   if (mouseX>=pauseX1 && mouseX<=pauseX1+BOXW && mouseY>=pauseY1 && mouseY<=pauseY1+pauseHeight) {
     play();
+  }
+  if (mouseX>=stopX && mouseX<=stopX+stopW && mouseY>=stopY && mouseY<= stopY+stopH){
+    stopbutton();
   }
 }//End mousePressedMusic
 
