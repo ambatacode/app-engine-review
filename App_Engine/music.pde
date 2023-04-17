@@ -1,4 +1,5 @@
 //global variables\
+boolean rahrah = false;
  boolean click = false;
 boolean PSS = false;
 boolean AutoPlayOn = false;
@@ -162,6 +163,10 @@ void mousePressedMusic() {
   if (mouseX>=stopX && mouseX<=stopX+stopW && mouseY>=stopY && mouseY<= stopY+stopH){
     stopbutton();
   }
+  if (mouseX>=SFBX1 && mouseX<=SFBX1+skipwidth && mouseY>=FRY1 && mouseY<=FRY1+pauseHeight && mousePressed) {
+    newSongbutton();
+  }
+  
 }//End mousePressedMusic
 
 void concatenationofmusicFiles() {
@@ -249,4 +254,32 @@ void autoPlayMusic() { //auto-Play button
   }//end autoPlayOn
 }//end autoPlayMusic
 
+void newSongbutton() {
+    if ( songs[currentSong].isPlaying() ) {
+      if ( currentSong == songs.length - 1 ){
+        songs[currentSong].mute();
+        currentSong = songs.length - songs.length;
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();
+        RW = true;
+      } else {
+        RW = false;
+      }
+      if (RW == false) {
+         songs[currentSong].mute();
+        currentSong++;
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();
+     //Empty IF
+    }
+  }
+}
+
+void backsong () {
+  
+}
 //End Music SubProgram

@@ -16,6 +16,7 @@ float SFTX1, SFTY1, SFTX2, SFTY2, SFTX3, SFTY3;
 float SBTX1, SBTY1, SBTX2, SBTY2, SBTX3, SBTY3;
 float SBX, SBY, SBL, SBH;
 float MX, MY, MH, ML;
+float CEX, CEY;
 //
 void setup2() {
   appWidth = width; //displayWidth
@@ -110,4 +111,7 @@ stopX = pauseStartDrawX * 10/30;
    BOXW = pauseHeight * 1.1/2;
    newW = buttonReferentMeasure;
    skipwidth = pauseHeight * 3.4/3;
+   
+   CEX = pauseStartDrawX;
+   CEY = pauseY1 * 12.9/12;
 }
