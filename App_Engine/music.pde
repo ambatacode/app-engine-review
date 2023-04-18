@@ -166,7 +166,9 @@ void mousePressedMusic() {
   if (mouseX>=SFBX1 && mouseX<=SFBX1+skipwidth && mouseY>=FRY1 && mouseY<=FRY1+pauseHeight && mousePressed) {
     newSongbutton();
   }
-  
+  if(mouseX>=BRX1 && mouseX<=BRX1+skipwidth && mouseY>=BRY2 && mouseY<=BRY2+pauseHeight) {
+    backsong();
+  }
 }//End mousePressedMusic
 
 void concatenationofmusicFiles() {
@@ -279,7 +281,27 @@ void newSongbutton() {
   }
 }
 
-void backsong () {
+void backsong() {
+      if(songs[currentSong].isPlaying()) {
+      if(currentSong <= songs.length - songs.length) {
+        songs[currentSong].mute();
+        currentSong = songs.length - 1;
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();
+        RW = true;
+    } else {
+      RW = false;
+    } if (RW == false){
+      songs[currentSong].mute();
+        currentSong--;
+        songs[currentSong].unmute();
+        songs[currentSong].rewind();
+        songs[currentSong].pause();
+        songs[currentSong].play();
+    }
+  }
   
 }
 //End Music SubProgram

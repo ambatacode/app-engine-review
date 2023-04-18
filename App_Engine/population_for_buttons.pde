@@ -4,7 +4,7 @@ float appWidth, appHeight;
 float pauseX1, pauseY1, pauseX2, pauseY2, pauseWidth, pauseHeight;
 float pauseScaleWidth, pauseScaleHeight;
 float stopX, stopY, stopW, stopH;
-color resetcolourNight=#FFFF4B, black=#000000, lightgreen=#57CC99;//night mode friendly
+color resetcolourNight=#FFFF4B, lightgreen=#57CC99;//night mode friendly
 color resetcolourDay=#FFFFFF;
 float SBBX1, SBBY1, SBBX2, SBBY2, SBBX3, SBBY3, BRX1, BRY2, BRW, BRH;
 float SW;

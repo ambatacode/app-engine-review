@@ -10,6 +10,7 @@ color night = #FF9F00;
 void setup() {
   //
   setupMusic();
+  textsetup();
   //
   size(1000,700);
   background(night);
@@ -20,7 +21,7 @@ void draw() {
   drawMusic();
   drawMusicButtons();
   setup2();
-
+textdraw();
   
 }//End draw
 //
