@@ -40,10 +40,6 @@ void keyPressedMusic() {
  if (key == 'f' || key == 'F') {
    if (songs[currentSong].isPlaying()){
    songs[currentSong].skip(5000);
- } else {
-   currentSong++;
-   songs[currentSong].rewind();
-   songs[currentSong].play();
  }
  }
  //end
@@ -51,41 +47,21 @@ void keyPressedMusic() {
    //double tap r = reset
    songs[currentSong].skip(-5000);//miliseconds
  }//SKIP END---SKIP END---SKIP END---SKIP END---SKIP END---SKIP END---SKIP END---
- //
- //Single loop
- /*
- - ---issues---
- - the computer wont read the number of loops. it just loops into infinity
- - 
- */
- if (key == '1'){
-   if(songs[currentSong].isPlaying() ) {
-     songs[currentSong].pause();
-     songs[currentSong].loop(0);
-   } else {
-     //songs[currentSong].loop(0);
-   }
-   //finish song then replays
-   //delay(songs[currentSong].length() - songs[currentSong].position());
-   //issue delay stops errything. comp doesnt realize song plays
-   //songs[currentSong].loop(0);
- }
-   //
-   //loop to inf
-   if (key == '9' && key !='1' ){
+
+/*if (key == '1') {
+  if (songs[currentSong].isPlaying()) {
+    songs[currentSong].pause();
+    songs[currentSong].loop(1);
+  } else {
+  }
+}*/
+
+  
+ 
+   if (key == '9'){
      if ( songs[currentSong].isPlaying() ) {
-       songs[currentSong].pause();
-       songs[currentSong].loop(-1);
-       songs[currentSong].play();
      } else {
-       //songs[currentSong].loop(-1);
      }
-   //finish song then replays for inf
-   //delay(songs[currentSong].length() - songs[currentSong].position());
-   //loop inf
-   //songs[currentSong].loop(-1);
-   //
-   //stop
  }
  //
  if (key == 's' || key =='S') {
@@ -108,7 +84,7 @@ AutoPlayOn = false;
         songs[currentSong].mute();
         currentSong = songs.length - 1;
         songs[currentSong].unmute();
-        songs[currentSong].rewind();
+        //songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
         RW = true;
@@ -118,7 +94,7 @@ AutoPlayOn = false;
       songs[currentSong].mute();
         currentSong--;
         songs[currentSong].unmute();
-        songs[currentSong].rewind();
+        //songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
     }
@@ -131,7 +107,7 @@ AutoPlayOn = false;
         songs[currentSong].mute();
         currentSong = songs.length - songs.length;
         songs[currentSong].unmute();
-        songs[currentSong].rewind();
+        //songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
         RW = true;
@@ -142,7 +118,7 @@ AutoPlayOn = false;
          songs[currentSong].mute();
         currentSong++;
         songs[currentSong].unmute();
-        songs[currentSong].rewind();
+        //songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
      //Empty IF
@@ -200,14 +176,15 @@ void mute() {
   
 }
 void stopbutton() {
-  if ( songs[currentSong].isPlaying() ) {
+  /*if ( songs[currentSong].isPlaying() ) {
      songs[currentSong].pause(); 
      songs[currentSong].rewind();
      PSS = true;
      } else {
-   songs[currentSong].rewind();
+       songs[currentSong].pause(); 
+     songs[currentSong].rewind();
    PSS = false;
-  }
+  }*/
 }
 void play() {
   if ( songs[currentSong].isPlaying() ) {
@@ -217,7 +194,7 @@ void play() {
     }
     songs[currentSong].pause();
   } else if (songs[currentSong].position() >= songs[currentSong]. length()*9/10) {
-    songs[currentSong].rewind();
+    ///songs[currentSong].rewind();
   } else {
     songs[currentSong].play();
     if ( PSS == true ){
@@ -236,7 +213,7 @@ void autoPlayMusic() { //auto-Play button
         songs[currentSong].mute();
         currentSong = songs.length - songs.length; // intention is zero
         songs[currentSong].unmute();
-        songs[currentSong].rewind();
+        //songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
         RW = true;
@@ -248,7 +225,7 @@ void autoPlayMusic() { //auto-Play button
         songs[currentSong].mute();
         currentSong++;
         songs[currentSong].unmute();
-        songs[currentSong].rewind();
+        //songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
       }
@@ -257,12 +234,11 @@ void autoPlayMusic() { //auto-Play button
 }//end autoPlayMusic
 
 void newSongbutton() {
-    if ( songs[currentSong].isPlaying() ) {
       if ( currentSong == songs.length - 1 ){
         songs[currentSong].mute();
         currentSong = songs.length - songs.length;
         songs[currentSong].unmute();
-        songs[currentSong].rewind();
+        //songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
         RW = true;
@@ -273,12 +249,11 @@ void newSongbutton() {
          songs[currentSong].mute();
         currentSong++;
         songs[currentSong].unmute();
-        songs[currentSong].rewind();
+        //songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
      //Empty IF
     }
-  }
 }
 
 void backsong() {
@@ -287,7 +262,7 @@ void backsong() {
         songs[currentSong].mute();
         currentSong = songs.length - 1;
         songs[currentSong].unmute();
-        songs[currentSong].rewind();
+        //songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
         RW = true;
@@ -297,7 +272,7 @@ void backsong() {
       songs[currentSong].mute();
         currentSong--;
         songs[currentSong].unmute();
-        songs[currentSong].rewind();
+        //songs[currentSong].rewind();
         songs[currentSong].pause();
         songs[currentSong].play();
     }

@@ -14,6 +14,7 @@ void setup() {
   //
   size(1000,700);
   background(night);
+  songs[currentSong].loop(0);
   // //Change the index manually
 }//End setup
 //
@@ -27,7 +28,6 @@ textdraw();
 //
 void keyPressed() {
   keyPressedMusic();
-  mousePressedMusic();
 }
   //
   //proto
