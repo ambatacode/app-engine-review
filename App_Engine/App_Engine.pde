@@ -6,35 +6,38 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //Global Variables
 color night = #FF9F00;
+color menunight = #075200;
+boolean menu = true;
+boolean music = false;
+boolean weather = false;
 
 void setup() {
-  //
-  setupMusic();
-  textsetup();
-  //
+  if (menu == false && music == true) setupMusic();
+  if (menu == false && music == true)textsetup();
   size(1000,700);
-  background(night);
-  songs[currentSong].loop(0);
-  // //Change the index manually
+  if (menu == false && music == true)background(night);
+  //
+  if (menu == true && music == false)menuSetup();
 }//End setup
 //
 void draw() {
-  drawMusic();
-  drawMusicButtons();
+  if (menu == false && music == true)drawMusic();
+  if (menu == false && music == true)drawMusicButtons();
   setup2();
-textdraw();
-  
+if (menu == false && music == true)textdraw();
+  if (menu == true && music == false)menuDraw();
 }//End draw
 //
 void keyPressed() {
-  keyPressedMusic();
+  if (menu == false && music == true)keyPressedMusic();
 }
   //
   //proto
   //End keyPressed
 
 void mousePressed() {
-  mousePressedMusic();
+  if (menu == false && music == true)mousePressedMusic();
+  if (menu == true && music == false)menumousePressed();
 }//End mousePressed
 //
 //End MAIN Program (Driver)

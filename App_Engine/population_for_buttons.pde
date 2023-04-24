@@ -17,6 +17,8 @@ float SBTX1, SBTY1, SBTX2, SBTY2, SBTX3, SBTY3;
 float SBX, SBY, SBL, SBH;
 float MX, MY, MH, ML;
 float CEX, CEY;
+float TBX, TBY, TBW, TBH;
+float MBAX, MBAY, MBAW, MBAH;
 //
 void setup2() {
   appWidth = width; //displayWidth
@@ -114,4 +116,14 @@ stopX = pauseStartDrawX * 10/30;
    
    CEX = pauseStartDrawX;
    CEY = pauseY1 * 12.9/12;
+   
+   TBX = width * 18/20;
+   TBY = 0;
+   TBW = width * 1/10;
+   TBH = height;
+   
+   MBAX = width * 23/25;
+   MBAY = height * 1/20;
+   MBAW = pauseHeight * 3/4;
+   MBAH = pauseHeight * 3/4;
 }
