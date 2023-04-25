@@ -33,102 +33,25 @@ void drawMusic() {
 }//End drawMusic
 //
 void keyPressedMusic() {
-    if(key == 'm' || key == 'M') {
-      mute();
- }
- if (key == 'f' || key == 'F') {
-   if (songs[currentSong].isPlaying()){
-   songs[currentSong].skip(5000);
- }
- }
- //end
- if (key == 'r' || key == 'R'){ 
-   //double tap r = reset
-   songs[currentSong].skip(-5000);//miliseconds
- }//SKIP END---SKIP END---SKIP END---SKIP END---SKIP END---SKIP END---SKIP END---
-
-/*if (key == '1') {
-  if (songs[currentSong].isPlaying()) {
-    songs[currentSong].pause();
-    songs[currentSong].loop(1);
-  } else {
-  }
-}*/
-
-  
- 
-   if (key == '9'){
-     if ( songs[currentSong].isPlaying() ) {
-     } else {
-     }
- }
+ if(key == 'm' || key == 'M') {mute();}
  //
- if (key == 's' || key =='S') {
-   stopbutton();
- }
- if (key == 'p' || key == 'P') {
-   play();  
-}//end pause
-//auto
-if (key == 'o'|| key == 'O') {
-  if (AutoPlayOn == false) {
-  AutoPlayOn = true;
-} else {
-AutoPlayOn = false;
-}
-}
-  if (key == 'B' || key == 'b') {
-    if(songs[currentSong].isPlaying()) {
-      if(currentSong <= songs.length - songs.length) {
-        songs[currentSong].mute();
-        currentSong = songs.length - 1;
-        songs[currentSong].unmute();
-        songs[currentSong].rewind();
-        songs[currentSong].pause();
-        songs[currentSong].play();
-        RW = true;
-    } else {
-      RW = false;
-    } if (RW == false){
-      songs[currentSong].mute();
-        currentSong--;
-        songs[currentSong].unmute();
-        songs[currentSong].rewind();
-        songs[currentSong].pause();
-        songs[currentSong].play();
-    }
-  }
-  }
-//
- if ( key == 'n' || key =='N' ) {
-    if ( songs[currentSong].isPlaying() ) {
-      if ( currentSong == songs.length - 1 ){
-        songs[currentSong].mute();
-        currentSong = songs.length - songs.length;
-        songs[currentSong].unmute();
-        songs[currentSong].rewind();
-        songs[currentSong].pause();
-        songs[currentSong].play();
-        RW = true;
-      } else {
-        RW = false;
-      }
-      if (RW == false) {
-         songs[currentSong].mute();
-        currentSong++;
-        songs[currentSong].unmute();
-        songs[currentSong].rewind();
-        songs[currentSong].pause();
-        songs[currentSong].play();
-     //Empty IF
-    }
-  }
-}
-
-if (AutoPlayOn) {
-  if (AutoPlayOn == false);
-}
-//End keyPressedMusic
+ if (key == 'f' || key == 'F') {skipforward();}
+ //
+ if (key == 'r' || key == 'R'){ skipback();}
+ //
+ if (key == '1') {looponce();}
+ //
+ if (key == '9'&& key != '1' ){loopINF();}
+ //
+ if (key == 's' || key =='S') {stopbutton();}
+ //
+ if (key == 'p' || key == 'P') {play();}
+ //
+ if (key == 'o'|| key == 'O') {autoplayactivation();}
+ //
+ if (key == 'B' || key == 'b') {backsong();}
+ //
+if ( key == 'n' || key =='N' ) { if ( songs[currentSong].isPlaying() ) {newSongbutton();}}
 
 }
 void mousePressedMusic() {
@@ -143,6 +66,9 @@ void mousePressedMusic() {
   }
   if(mouseX>=BRX1 && mouseX<=BRX1+skipwidth && mouseY>=BRY2 && mouseY<=BRY2+pauseHeight) {
     backsong();
+  }
+  if (mouseX>=BRX1 && mouseX<=BRX1+skipwidth && mouseY>=BRY2 && mouseY<=BRY2+pauseHeight){
+  
   }
 }//End mousePressedMusic
 
@@ -277,5 +203,36 @@ void backsong() {
     }
   }
   
+}
+void loopINF() {
+       if ( songs[currentSong].isPlaying() ) {
+       songs[currentSong].pause();
+       songs[currentSong].loop(-1);
+     } else {
+       songs[currentSong].loop(0);
+     }
+}
+void looponce() {
+    if (songs[currentSong].isPlaying()) {
+    songs[currentSong].pause();
+    songs[currentSong].loop(1);
+  } else {
+    songs[currentSong].loop(0);
+  }
+}
+void skipforward() {
+     if (songs[currentSong].isPlaying()){
+   songs[currentSong].skip(5000);
+ }
+}
+void skipback(){
+     songs[currentSong].skip(-5000);
+}
+void autoplayactivation() {
+    if (AutoPlayOn == false) {
+    AutoPlayOn = true;
+} else {
+AutoPlayOn = false;
+}
 }
 //End Music SubProgram

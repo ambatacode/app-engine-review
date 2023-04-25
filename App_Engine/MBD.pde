@@ -1,5 +1,7 @@
 
 void drawMusicButtons() {
+  drawcoverbackground();
+    drawmenustuff();
   drawLoopButton();
   drawSkipBackButton();
   drawPausebutton();
@@ -198,4 +200,28 @@ void drawCoverElipse() {
   ellipse(CEX,CEY,skipwidth,skipwidth);
   noFill();
   noStroke();
+}
+
+void drawmenustuff() {
+  stroke(#317E00);
+  fill(#317E00);
+  rect(TBX, TBY, TBW, TBH,22);
+  noStroke();
+  noFill();
+  fill(#58AD00);
+  stroke(#58AD00);
+  rect(MBAX, MBAY, MBAW, MBAH);
+  noStroke();
+  noFill();
+      fill(Notti);
+  textFont(amongusballs, 40);
+  text(rahrar, MBAX, MBAY, MBAW, MBAH);
+  noFill();
+}
+void drawcoverbackground() {
+  fill(night);
+  stroke(night);
+    rect(0,0,width,height);
+    noStroke();
+  noFill();
 }

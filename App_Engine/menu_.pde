@@ -3,6 +3,11 @@ void menuSetup() {
 }
 
 void menuDraw() {
+  fill(menunight);
+  stroke(menunight);
+  rect(0,0,width,height);
+  noStroke();
+  noFill();
   stroke(#317E00);
   fill(#317E00);
   rect(TBX, TBY, TBW, TBH,22);
@@ -12,6 +17,10 @@ void menuDraw() {
   stroke(#58AD00);
   rect(MBAX, MBAY, MBAW, MBAH);
   noStroke();
+  noFill();
+    fill(Notti);
+  textFont(amongusballs, 21);
+  text(waggga, MBAX, MBAY, MBAW, MBAH);
   noFill();
   
 }

@@ -1,9 +1,10 @@
 float BX, BY, BW, BH;
 float BX2, BY2, BW2, BH2;
 String balls = "paused";
-String balls2 = "41K";
-PFont amongusballs ;
+String waggga = "Music";
+PFont amongusballs;
 color brandonC, red = #CE0000, brown = #000000, Notti = brown;
+String rahrar = "X";
 //image notti boolean
 //image kyle richh
 

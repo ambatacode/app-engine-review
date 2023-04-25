@@ -12,12 +12,12 @@ boolean music = false;
 boolean weather = false;
 
 void setup() {
-  if (menu == false && music == true) setupMusic();
-  if (menu == false && music == true)textsetup();
+  setupMusic();
+  textsetup();
   size(1000,700);
   if (menu == false && music == true)background(night);
   //
-  if (menu == true && music == false)menuSetup();
+  menuSetup();
 }//End setup
 //
 void draw() {
@@ -25,7 +25,7 @@ void draw() {
   if (menu == false && music == true)drawMusicButtons();
   setup2();
 if (menu == false && music == true)textdraw();
-  if (menu == true && music == false)menuDraw();
+if (menu == true && music == false)menuDraw();
 }//End draw
 //
 void keyPressed() {
@@ -37,7 +37,7 @@ void keyPressed() {
 
 void mousePressed() {
   if (menu == false && music == true)mousePressedMusic();
-  if (menu == true && music == false)menumousePressed();
+  menumousePressed();
 }//End mousePressed
 //
 //End MAIN Program (Driver)
